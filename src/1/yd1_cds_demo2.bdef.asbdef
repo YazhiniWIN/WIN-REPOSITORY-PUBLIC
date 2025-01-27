@@ -1,0 +1,55 @@
+managed implementation in class yd1_cl_booking unique;
+strict ( 2 );
+with draft;
+
+define behavior for YD1_CDS_DEMO2 alias BookingDemo2
+persistent table yrap_demo2
+draft table yrap_demo2_d
+etag master LocChangedAt
+lock master total etag ChangedAt
+authorization master( global )
+
+{
+//  field ( mandatory : create )
+//   BookID;
+
+  field ( readonly )
+   CreatedAt,
+   CreatedBy,
+   ChangedAt,
+   ChangedBy,
+   LocChangedAt,
+   LocChangedBy;
+
+//  field ( readonly : update )
+//   BookID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for YRAP_DEMO2
+  {
+    BookID = BOOK_ID;
+    BookDate = BOOK_DATE;
+    BookingFee = BOOKING_FEE;
+    CurrencyCode = CURRENCY_CODE;
+    CustName = CUST_NAME;
+    CityFrom = CITY_FROM;
+    CityTo = CITY_TO;
+    Status = STATUS;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    ChangedBy = CHANGED_BY;
+    ChangedAt = CHANGED_AT;
+    LocChangedBy = LOC_CHANGED_BY;
+    LocChangedAt = LOC_CHANGED_AT;
+  }
+}

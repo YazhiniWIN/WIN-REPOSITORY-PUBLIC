@@ -1,0 +1,22 @@
+projection;
+strict ( 2 );
+use draft;  // For Draft-5
+
+define behavior for YRAP_P_CDS_DEMO alias demo_booking
+use etag    // For eTag
+{
+  use create;
+  use update;
+  use delete;
+
+  // Action Button
+  use action actionStatus;
+  use action actionInactive;
+
+  // For Draft-6
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}

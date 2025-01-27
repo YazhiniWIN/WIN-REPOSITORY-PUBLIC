@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition forYD1_SP_DEMO2'
+define service YD1_SD_DEMO2 {
+  expose YD1_SP_DEMO2 as BookingDemo2;
+}

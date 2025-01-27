@@ -1,0 +1,5 @@
+CLASS ycl_rap_i_cds_demo DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF yrap_i_cds_demo.
+ENDCLASS.
+
+CLASS ycl_rap_i_cds_demo IMPLEMENTATION.
+ENDCLASS.
